@@ -1,4 +1,4 @@
-https://leetcode.com/problems/longest-palindromic-substring/solution/
+// https://leetcode.com/problems/longest-palindromic-substring/solution/
 // Brute-force:
 //      => for each substring in s, check if it's a palindrome. Record the max.
 //      => even after optimizations, brute force approach times out.
