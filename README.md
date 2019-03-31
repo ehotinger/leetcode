@@ -7,13 +7,13 @@ Solutions to leetcode problems.
 ### Easy
 
 https://leetcode.com/problems/count-primes/
-https://leetcode.com/problems/jewels-and-stones/
-https://leetcode.com/problems/linked-list-cycle/
 https://leetcode.com/problems/construct-quad-tree/
+https://leetcode.com/problems/ip-to-cidr/
 
 ### Medium
 
 https://leetcode.com/problems/3sum/
+https://leetcode.com/problems/pour-water/
 https://leetcode.com/problems/copy-list-with-random-pointer/
 https://leetcode.com/problems/product-of-array-except-self/
 https://leetcode.com/problems/string-to-integer-atoi/
