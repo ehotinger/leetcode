@@ -3,7 +3,8 @@ public class Solution {
         int numIslands = 0;
         int maxX = grid.GetLength(0);
         int maxY = grid.GetLength(1);
-        
+
+        // TODO: optimization: store wiped locations to prevent looking again.
         for(int i = 0; i < maxX; i++) {
             for(int j = 0; j < maxY; j++){
                 if(grid[i,j] == '1') {
