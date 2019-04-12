@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/binary-tree-paths/
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -8,31 +9,28 @@
  * }
  */
 public class Solution {
-    // 8:45 start
-    // 8:53 finish
-    
-    // NB: could be better optimized using a StringBuilder instead. Less allocations.
-    private List<string> _treePaths = new List<string>();
+    private IList<string> ret = new List<string>();
     
     public IList<string> BinaryTreePaths(TreeNode root) {
-        string s = string.Empty;
-        MakePaths(root, s);
-        return _treePaths;
+        if(root == null) {
+            return ret;
+        }
+        Recurse(root, "");
+        return ret;
     }
-       
-    public void MakePaths(TreeNode root, string s) {
-        if(root == null) return;
-        s += root.val;
+    
+    public void Recurse(TreeNode root, string path) {
         if(root.left == null && root.right == null) {
-            _treePaths.Add(s);
-        }
-        s+= "->";
-        if(root.left != null) {
-            MakePaths(root.left, s);
-        }
-        if (root.right != null) {
-            MakePaths(root.right, s);
+            path += root.val;
+            ret.Add(path);
+            return;
         }
         
+        if(root.left != null) {
+            Recurse(root.left, path + root.val + "->");
+        }
+        if(root.right != null) {
+            Recurse(root.right, path + root.val + "->");
+        }
     }
 }
