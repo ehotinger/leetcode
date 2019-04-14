@@ -1,25 +1,24 @@
 // https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 public class Solution {
     public IList<string> LetterCombinations(string digits) {
-        IList<string> curr = new List<string>();
-        if (digits.Length == 0) return curr;
-
-        curr.Add("");
-        foreach (char d in digits)
-        {
-            IList<string> next = new List<string>();
-            foreach (char letter in GetLetters(d))
-            {
-                foreach (string s in curr)
-                {
-                    next.Add(s + letter);
-                    //Console.WriteLine(string.Join(" ", next));
-                }
-            }
-            curr = next;
-            //Console.WriteLine("--------");
+        var ret = new List<string>();
+        if (digits.Length == 0) return ret;
+        Recurse(digits, "", 0, ret);
+        return ret;
+    }
+    
+    public void Recurse(string original, string built, int position, List<string> ret) {
+        if(position == original.Length && built.Length == original.Length) {
+            ret.Add(built);
         }
-        return curr;
+        
+        for(int i = position; i < original.Length; i++) {
+            var digit = original[i];
+            foreach(var ltr in GetLetters(digit)) {
+                Recurse(original, built + ltr, i+1, ret);
+            }
+        }
+        
     }
 
     public char[] GetLetters(char digit)
