@@ -15,7 +15,7 @@ public class Solution {
         if (root == null || p == null || q == null) return root;
         
         var ancestor = root;
-        while(ancestor != null){  
+        while(ancestor != null) {  
             if(ancestor.val > p.val && ancestor.val > q.val) {
                 ancestor = ancestor.left;
             } else if (ancestor.val < p.val && ancestor.val <q.val){
