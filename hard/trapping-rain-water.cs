@@ -15,9 +15,6 @@ public class Solution {
             maxRight[i] = rightSoFar;
         }
         
-        //Console.WriteLine(string.Join(",", maxLeft));
-        //Console.WriteLine(string.Join(",", maxRight));
-        
         int total = 0;
         for(int i = 0; i < height.Length; i++) {
             total += Math.Min(maxLeft[i], maxRight[i]) - height[i];
